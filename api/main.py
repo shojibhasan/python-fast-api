@@ -1,6 +1,7 @@
+from typing import Optional
+
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import Optional
 
 app = FastAPI()
 fakedb=[]
@@ -34,3 +35,6 @@ def add_course(course: Course):
 def delete_course(course_id: int):
     fakedb.pop(course_id-1)
     return {"task": "delete sucessful"}
+
+
+# uvicorn main:app --reload
